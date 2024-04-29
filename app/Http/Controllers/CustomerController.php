@@ -17,4 +17,20 @@ class CustomerController extends Controller
     public function getStudent($name, $code){
         echo "Nama Saya " . $name, " NRP " . $code;
     }
+
+    //Method untuk memanggil Form
+    public function create() {
+        return view('customer.create');
+    }
+
+    //Method untuk mengambil input form
+    public function store(Request $request) {
+       $this->validate($request, [
+            'name' => 'required',
+       ]);
+       
+        $name = $request->name;
+
+        return view('customer.show', compact('name'));
+    }
 }

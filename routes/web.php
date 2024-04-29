@@ -22,3 +22,7 @@ Route::get('customer/my-name', [CustomerController::class, 'index']);
 Route::get('customer/my-city/{param}', [CustomerController::class, 'getCity']); 
 
 Route::get('customer/get-student/{name}/{code}', [CustomerController::class, 'getStudent']);
+
+// Route::get('customer/create', [CustomerController::class, 'create'])->name('customer.create');
+Route::post('customer/store', [CustomerController::class, 'store'])->name('customer.store');
+Route::get('customer/create', [CustomerController::class, 'create'])->name('customer.create');
